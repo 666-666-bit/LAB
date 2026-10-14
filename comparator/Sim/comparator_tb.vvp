@@ -1,0 +1,83 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 9;
+:vpi_module "/usr/lib/aarch64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/aarch64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/aarch64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/aarch64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/aarch64-linux-gnu/ivl/va_math.vpi";
+S_0xb59f1f731580 .scope module, "comparator_1bit_tb" "comparator_1bit_tb" 2 2;
+ .timescale -9 -9;
+v0xb59f1f7460e0_0 .var "key_a", 0 0;
+v0xb59f1f7461a0_0 .var "key_b", 0 0;
+v0xb59f1f746240_0 .net "led_equal", 0 0, L_0xb59f1f7468f0;  1 drivers
+v0xb59f1f7462e0_0 .net "led_greater", 0 0, L_0xb59f1f746b30;  1 drivers
+v0xb59f1f7463b0_0 .net "led_less", 0 0, L_0xb59f1f746740;  1 drivers
+S_0xb59f1f731710 .scope module, "dut" "comparator_1bit" 2 10, 3 3 0, S_0xb59f1f731580;
+ .timescale -9 -9;
+    .port_info 0 /INPUT 1 "key_a";
+    .port_info 1 /INPUT 1 "key_b";
+    .port_info 2 /OUTPUT 1 "led_less";
+    .port_info 3 /OUTPUT 1 "led_equal";
+    .port_info 4 /OUTPUT 1 "led_greater";
+L_0xb59f1f746450 .functor NOT 1, v0xb59f1f7460e0_0, C4<0>, C4<0>, C4<0>;
+L_0xb59f1f746540 .functor NOT 1, v0xb59f1f7461a0_0, C4<0>, C4<0>, C4<0>;
+L_0xb59f1f746740 .functor NOT 1, L_0xb59f1f746600, C4<0>, C4<0>, C4<0>;
+L_0xb59f1f746850 .functor XNOR 1, L_0xb59f1f746450, L_0xb59f1f746540, C4<0>, C4<0>;
+L_0xb59f1f7468f0 .functor NOT 1, L_0xb59f1f746850, C4<0>, C4<0>, C4<0>;
+L_0xb59f1f746b30 .functor NOT 1, L_0xb59f1f746a00, C4<0>, C4<0>, C4<0>;
+v0xb59f1f731bc0_0 .net *"_ivl_12", 0 0, L_0xb59f1f746a00;  1 drivers
+v0xb59f1f745950_0 .net *"_ivl_4", 0 0, L_0xb59f1f746600;  1 drivers
+v0xb59f1f745a10_0 .net *"_ivl_8", 0 0, L_0xb59f1f746850;  1 drivers
+v0xb59f1f745ab0_0 .net "key_a", 0 0, v0xb59f1f7460e0_0;  1 drivers
+v0xb59f1f745b70_0 .net "key_b", 0 0, v0xb59f1f7461a0_0;  1 drivers
+v0xb59f1f745c80_0 .net "led_equal", 0 0, L_0xb59f1f7468f0;  alias, 1 drivers
+v0xb59f1f745d40_0 .net "led_greater", 0 0, L_0xb59f1f746b30;  alias, 1 drivers
+v0xb59f1f745e00_0 .net "led_less", 0 0, L_0xb59f1f746740;  alias, 1 drivers
+v0xb59f1f745ec0_0 .net "logic_a", 0 0, L_0xb59f1f746450;  1 drivers
+v0xb59f1f745f80_0 .net "logic_b", 0 0, L_0xb59f1f746540;  1 drivers
+L_0xb59f1f746600 .cmp/gt 1, L_0xb59f1f746540, L_0xb59f1f746450;
+L_0xb59f1f746a00 .cmp/gt 1, L_0xb59f1f746450, L_0xb59f1f746540;
+    .scope S_0xb59f1f731580;
+T_0 ;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0xb59f1f7460e0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0xb59f1f7461a0_0, 0, 1;
+    %end;
+    .thread T_0;
+    .scope S_0xb59f1f731580;
+T_1 ;
+    %vpi_call 2 19 "$dumpfile", "comparator_tb.vcd" {0 0 0};
+    %vpi_call 2 20 "$dumpvars", 32'sb00000000000000000000000000000000, S_0xb59f1f731580 {0 0 0};
+    %delay 20, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0xb59f1f7460e0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0xb59f1f7461a0_0, 0, 1;
+    %delay 20, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0xb59f1f7460e0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0xb59f1f7461a0_0, 0, 1;
+    %delay 20, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0xb59f1f7460e0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0xb59f1f7461a0_0, 0, 1;
+    %delay 20, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0xb59f1f7460e0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0xb59f1f7461a0_0, 0, 1;
+    %delay 20, 0;
+    %vpi_call 2 27 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "Sim/comparator_tb.v";
+    "RTL/comparator.v";
