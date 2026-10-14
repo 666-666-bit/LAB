@@ -1,0 +1,91 @@
+$date
+	Wed Oct 14 08:59:56 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module Full_adder_tb $end
+$var wire 1 ! led_s $end
+$var wire 1 " led_cout $end
+$var reg 1 # key_a $end
+$var reg 1 $ key_b $end
+$var reg 1 % key_cin $end
+$scope module dut $end
+$var wire 1 & a $end
+$var wire 1 ' b $end
+$var wire 1 ( cin $end
+$var wire 1 # key_a $end
+$var wire 1 $ key_b $end
+$var wire 1 % key_cin $end
+$var wire 1 " led_cout $end
+$var wire 1 ! led_s $end
+$var wire 1 ) s $end
+$var wire 1 * cout $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+0*
+0)
+0(
+0'
+0&
+1%
+1$
+1#
+1"
+1!
+$end
+#20
+0!
+1)
+1(
+0%
+#40
+0(
+1'
+1%
+0$
+#60
+1!
+0"
+0)
+1*
+1(
+0%
+#80
+1"
+0!
+0*
+1)
+0(
+0'
+1&
+1%
+1$
+0#
+#100
+1!
+0"
+0)
+1*
+1(
+0%
+#120
+0(
+1'
+1%
+0$
+#140
+0!
+1)
+1(
+0%
+#160
