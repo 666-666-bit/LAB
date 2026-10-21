@@ -1,0 +1,5 @@
+# syn/run_synth.ys
+read_verilog RTL/counter.v
+synth -top counter
+stat
+show -format dot -prefix syn/rtl_view counter

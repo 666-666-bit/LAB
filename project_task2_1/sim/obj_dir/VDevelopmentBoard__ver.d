@@ -1,0 +1,1 @@
+obj_dir/VDevelopmentBoard.cpp obj_dir/VDevelopmentBoard.h obj_dir/VDevelopmentBoard.mk obj_dir/VDevelopmentBoard__Slow.cpp obj_dir/VDevelopmentBoard__Syms.cpp obj_dir/VDevelopmentBoard__Syms.h obj_dir/VDevelopmentBoard__ver.d obj_dir/VDevelopmentBoard_classes.mk  : /usr/bin/verilator_bin /home/hjp/project_task2_1/counter.v /usr/bin/verilator_bin DevelopmentBoard.v 
