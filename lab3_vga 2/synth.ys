@@ -1,0 +1,5 @@
+read_verilog -sv RTL/vga_top.v RTL/vga_ctrl.v RTL/vga_pic.v
+hierarchy -check -top vga_top
+proc; opt; memory; opt; fsm; opt
+stat
+show -format dot -prefix vga_rtl_view
